@@ -1,13 +1,24 @@
 import axios from 'axios';
+import React from 'react';
 
 const OPEN_WEATHER_BASE_URL = 'http://api.openweathermap.org/data/2.5';
+//TODO: place API key in .env
 const OPEN_WEATHER_API_KEY = 'b9fdd86abbff40a94806875c86f97313';
-// const OPEN_WEATHER_API_KEY = process.env.OPEN_WEATHER_API_KEY;
 const OPEN_WEATHER_IMG_URL = 'http://openweathermap.org/img/w';
-// var query = '';
-// var cities = [];
-// var citiesWeather = [];
-// var currentCity = 0;
+
+const latitude = -33;
+const longitude = 151;
+
+const x = `${OPEN_WEATHER_BASE_URL}/weather?appid=${OPEN_WEATHER_API_KEY}&lat=${latitude}&lon=${longitude}&units=metric`;
+
+const test = url =>
+	axios
+		.get(url)
+		.then((response) => response.data.main.temp)
+		.catch(error => error.message)
+;
+
+console.log(test(x));
 
 const getWeather = url => new Promise((resolve, reject) => {
   axios
@@ -62,7 +73,6 @@ const getDailyWeather = url => new Promise((resolve, reject) => {
             maximum: fc.temp.max,
           },
         }));
-
         resolve(dailyForecasts);
       } else {
         reject('Weather data not found');
@@ -71,36 +81,49 @@ const getDailyWeather = url => new Promise((resolve, reject) => {
     .catch(error => reject(error.message));
 });
 
+const getCurrentWeatherByPosition = ({latitude, longitude}) => {
+	const url = `${OPEN_WEATHER_BASE_URL}/weather?appid=${OPEN_WEATHER_API_KEY}&lat=${latitude}&lon=${longitude}&units=metric`;
 
-class WeatherService {
-  getCurrentWeatherByPosition({ latitude, longitude }) {
-    if (!latitude) {
-      throw Error('Latitude is required');
-    }
+	return getWeather(url);
+};
 
-    if (!longitude) {
-      throw Error('Longitude is required');
-    }
+const getDailyWeatherByPosition = ({latitude, longitude}) => {
+	const url = `${OPEN_WEATHER_BASE_URL}/forecast/daily?appid=${OPEN_WEATHER_API_KEY}&lat=${latitude}&lon=${longitude}&units=metric&cnt=7`;
+	
+	return getDailyWeather(url);
+};
 
-    const url = `${OPEN_WEATHER_BASE_URL}/weather?appid=${OPEN_WEATHER_API_KEY}&lat=${latitude}&lon=${longitude}&units=metric`;
+console.log(getDailyWeatherByPosition, '!!!!');
+// class WeatherService extends Component {
+//   getCurrentWeatherByPosition({ latitude, longitude }) {
+//     if (!latitude) {
+//       throw Error('Latitude is required');
+//     }
 
-    return getWeather(url);
-  }
+//     if (!longitude) {
+//       throw Error('Longitude is required');
+//     }
+
+//     const url = `${OPEN_WEATHER_BASE_URL}/weather?appid=${OPEN_WEATHER_API_KEY}&lat=${latitude}&lon=${longitude}&units=metric`;
+
+//     return getWeather(url);
+//   }
 
 
-  getDailyWeatherByPosition({ latitude, longitude }) {
-    if (!latitude) {
-      throw Error('Latitude is required');
-    }
+//   getDailyWeatherByPosition({ latitude, longitude }) {
+//     if (!latitude) {
+//       throw Error('Latitude is required');
+//     }
 
-    if (!longitude) {
-      throw Error('Longitude is required');
-    }
+//     if (!longitude) {
+//       throw Error('Longitude is required');
+//     }
 
-    const url = `${OPEN_WEATHER_BASE_URL}/forecast/daily?appid=${OPEN_WEATHER_API_KEY}&lat=${latitude}&lon=${longitude}&units=metric&cnt=7`;
+//     const url = `${OPEN_WEATHER_BASE_URL}/forecast/daily?appid=${OPEN_WEATHER_API_KEY}&lat=${latitude}&lon=${longitude}&units=metric&cnt=7`;
 
-    return getDailyWeather(url);
-  }
-}
+//     return getDailyWeather(url);
+//   }
+// }
 
-export { WeatherService };
+
+export default getDailyWeatherByPosition;

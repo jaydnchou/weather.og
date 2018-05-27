@@ -1,10 +1,10 @@
 import axios from 'axios';
+import { Component } from 'react';
 
 const BASE_URL = 'https://www.googleapis.com/geolocation/v1/geolocate';
 const API_KEY = 'AIzaSyBApWL3O-jXOBBD--RJ7hK1gq3uxBJk1wo';
-// const API_KEY = process.env.GOOGLE_GEOLOCATION_API_KEY;
 
-class GeolocationService {
+class GeolocationService extends Component {
   getCurrentPosition() {
     const url = `${BASE_URL}?key=${API_KEY}`;
 
