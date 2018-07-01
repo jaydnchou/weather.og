@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Header = props => (
-  <nav className="header">
+  <nav className='header'>
     <span>{props.title}</span>
   </nav>
 );

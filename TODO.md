@@ -1,0 +1,2 @@
+- TODO: place API key in .env
+- Add propTypes and check console for errors

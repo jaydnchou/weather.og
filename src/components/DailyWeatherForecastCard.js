@@ -18,7 +18,7 @@ const getDate = date => {
 
 
 const DailyWeatherForecastCard = ({ forecast }) => {
-	console.log(forecast);
+
 	return (
 		<div className="daily-weather-card">
 			<small>{getDate(forecast.date)}</small>
