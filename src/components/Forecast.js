@@ -17,7 +17,7 @@ const Forecast = () => (
 
       <div className='carousel-inner'>
         <div className='carousel-item active'>
-          <h2>Pretty, but cold AF</h2>
+          <h2>Pretty, but cold as fuck</h2>
         </div>
         <div className='container carousel-item'>
           <div className='section'>
