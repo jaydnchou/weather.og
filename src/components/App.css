@@ -1,44 +1,57 @@
+.container {
+  width: 100%;
+  height: auto;
+  position: absolute;
+}
+
+@media (min-width: 768px) {
+  .background {
+    max-width: 80%;
+    padding-left: 40%;
+  }
+}
+
 /* HEADER */
 .header {
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  margin-top: 2rem;
+  font-size: 2em;
+  padding: 2em;
   text-align: center;
 }
 
-.header span {
-  font-size: 3vw;
-}
-
 /* BACKGROUND IMAGE */
-img {
-  width: 100%;
+.background {
+  background-color: black;
+  max-width: 100%;
+  max-height: 100vh;
 }
 
 /* CARD */
 .current-forecast {
+  display: grid;
+  width: 100%;
+  height: auto;
+
   border: none;
   color: #FFF;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+  /* display: flex;
+  flex-direction: column; */
+  /* position: relative; */
 }
 
 .current-forecast h1 {
-  font-size: 25vw;
-  padding-top: 70vw;
+  font-size: 4em;
+  padding-top: 10em;
   text-align: center;
 }
 
 h2 {
   display: block;
   flex: 0 1 auto;
-  font-size: 12vw;
-  padding: 0 10vw 5vw 15vw;
+  /* font-size: 12vw; */
+  /* padding: 0 10vw 5vw 15vw; */
 }
 
-.carousel-indicators {
+/* .carousel-indicators {
   margin: 0 15% 0 15%;
 }
 
@@ -48,7 +61,7 @@ h2 {
   display: inline-block;
   height: 5px;
   width: 5px;
-}
+} */
 
 .weekly-forecast {
   display: block;

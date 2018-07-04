@@ -13,9 +13,7 @@ import WeatherService, { test } from '../services/WeatherService';
 
 const App = () => (
   <div className='current-forecast'>
-    <Header title="Today's Weather" />
-    <Search />
-    <WeatherList />
+    <Header title="Today's weather"/>
     <Forecast />
   </div>
 );

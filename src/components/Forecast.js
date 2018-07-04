@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import backgroundImage from '../images/leaves2.jpg';
 
 const Forecast = () => (
-  <div>
-    <img src={backgroundImage} alt='background' />
-    <div className='card-img-overlay'>
-      <h1>-3&deg;</h1>
+  <div className='container'>
+    <div>
+      <img className='background' src={backgroundImage} alt='background' />
     </div>
 
     <div className='carousel slide' data-ride='carousel'>
@@ -19,7 +18,7 @@ const Forecast = () => (
         <div className='carousel-item active'>
           <h2>Pretty, but cold as fuck</h2>
         </div>
-        <div className='container carousel-item'>
+        <div className='container'>
           <div className='section'>
             <ul>
               <li className='weekly-forecast'>Monday</li>
