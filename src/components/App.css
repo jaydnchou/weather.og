@@ -8,55 +8,47 @@
 
 /* BACKGROUND IMAGE */
 .background {
+  display: block;
   background-color: black;
-  max-width: 100%;
-  max-height: 100vh;
+  height: 60vh;
   margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  .background {
-    display: block;
-    margin: 0 auto;
-  }
+  max-width: 100%;
+  max-height: 100%;
 }
 
 /* CARD */
 .current-forecast {
   display: grid;
-  width: 100%;
-  height: auto;
   border: none;
   color: #FFF;
+  width: 100%;
+  height: auto;
 }
 
 .current-forecast h1 {
   font-size: 4em;
   text-align: center;
-  top: 36vh;
   position: absolute;
+  top: 30vh;
 }
 
 h2 {
-  color: #FFF;
   display: block;
+  color: #FFF;
   font-size: 2.75em;
-  padding: 0 1.5em .5em 1.5em;
+  padding: 0 1.5em 1em 1.5em;
 }
 
 @media (min-width: 433px) {
-  .current-forecast h1 {
-    top: 50vh;
-  }
   h2 {
     display: block;
     font-size: 4.5em;
-    margin: auto;
+    margin: 0 auto;
   }
 }
 
-/* .carousel-indicators {
-  margin: 0 15% 0 15%;
+.carousel-indicators {
+  margin: 0 15%;
 }
 
 .carousel-indicators li {
@@ -65,7 +57,7 @@ h2 {
   display: inline-block;
   height: 5px;
   width: 5px;
-} */
+}
 
 .section {
   display: grid;
