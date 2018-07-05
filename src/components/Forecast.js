@@ -20,23 +20,19 @@ const Forecast = () => (
         </div>
         <div className='container'>
           <div className='section'>
-            <ul>
-              <li className='weekly-forecast'>Monday</li>
-              <li className='weekly-forecast'>Tuesday</li>
-              <li className='weekly-forecast'>Wednesday</li>
-              <li className='weekly-forecast'>Thursday</li>
-              <li className='weekly-forecast'>Friday</li>
-              <li className='weekly-forecast'>Saturday</li>
-              <li className='weekly-forecast'>Sunday</li>
+            <ul className='weekly-forecast'>
+              <li>Monday</li>
+              <li>Tuesday</li>
+              <li>Wednesday</li>
+              <li>Thursday</li>
+              <li>Friday</li>
             </ul>
-            <ul>
-              <li className='weekly-forecast'>-1&deg;</li>
-              <li className='weekly-forecast'>2&deg;</li>
-              <li className='weekly-forecast'>5&deg;</li>
-              <li className='weekly-forecast'>0&deg;</li>
-              <li className='weekly-forecast'>-1&deg;</li>
-              <li className='weekly-forecast'>0&deg;</li>
-              <li className='weekly-forecast'>4&deg;</li>
+            <ul className='weekly-forecast'>
+              <li>-1&deg;</li>
+              <li>2&deg;</li>
+              <li>5&deg;</li>
+              <li>0&deg;</li>
+              <li>-1&deg;</li>
             </ul>
           </div>
         </div>

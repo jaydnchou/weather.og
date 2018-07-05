@@ -1,20 +1,14 @@
 .container {
   width: 100%;
   height: auto;
-  position: absolute;
-}
-
-@media (min-width: 768px) {
-  .background {
-    max-width: 80%;
-    padding-left: 40%;
-  }
+  margin: auto;
 }
 
 /* HEADER */
 .header {
-  font-size: 2em;
-  padding: 2em;
+  color: #FFF;
+  font-size: 1.5em;
+  padding-top: 1.5em;
   text-align: center;
 }
 
@@ -23,6 +17,14 @@
   background-color: black;
   max-width: 100%;
   max-height: 100vh;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .background {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 /* CARD */
@@ -30,12 +32,8 @@
   display: grid;
   width: 100%;
   height: auto;
-
   border: none;
   color: #FFF;
-  /* display: flex;
-  flex-direction: column; */
-  /* position: relative; */
 }
 
 .current-forecast h1 {
@@ -45,10 +43,18 @@
 }
 
 h2 {
+  color: #FFF;
   display: block;
-  flex: 0 1 auto;
-  /* font-size: 12vw; */
-  /* padding: 0 10vw 5vw 15vw; */
+  font-size: 2.75em;
+  padding: 0 1.5em .5em 1.5em;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    display: block;
+    font-size: 4.5em;
+    margin: auto;
+  }
 }
 
 /* .carousel-indicators {
@@ -63,14 +69,23 @@ h2 {
   width: 5px;
 } */
 
-.weekly-forecast {
-  display: block;
-  margin-bottom: -1px;
-  padding: 0.75rem 1.25rem;
-  position: relative;
-}
-
 .section {
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: minmax(200px, 1fr) 1fr;
+}
+
+.weekly-forecast {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-row-gap: 1.5em;
+  list-style: none;
+}
+
+@media (min-width: 500px) {
+  .section {
+    margin: 0;
+  }
+  .weekly-forecast {
+    margin: auto;
+  }
 }
