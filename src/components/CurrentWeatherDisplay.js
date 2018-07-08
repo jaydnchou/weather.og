@@ -31,13 +31,4 @@ const getUpdateTime = date => {
 //     weather: PropTypes.object.isRequired
 // };
 
-// const CurrentWeatherDisplay = () => {
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(function (position) {
-//       return `lat: ${position.coords.latitude} long: ${position.coords.longitude}`;
-//     });
-//   } else return 'Gotta accept that popup!';
-// };
-
-
 // export default CurrentWeatherDisplay;
