@@ -9,7 +9,7 @@ const latitude = -33;
 const longitude = 151;
 
 // const x = `${OPEN_WEATHER_BASE_URL}/weather?appid=${OPEN_WEATHER_API_KEY}&lat=${latitude}&lon=${longitude}&units=metric`;
-
+// testing git
 export const test = url => {
 	axios
 		.get(url)
